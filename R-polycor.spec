@@ -4,7 +4,7 @@
 #
 Name     : R-polycor
 Version  : 0.7.9
-Release  : 14
+Release  : 15
 URL      : https://cran.r-project.org/src/contrib/polycor_0.7-9.tar.gz
 Source0  : https://cran.r-project.org/src/contrib/polycor_0.7-9.tar.gz
 Summary  : Polychoric and Polyserial Correlations
@@ -12,7 +12,7 @@ Group    : Development/Tools
 License  : GPL-2.0+
 Requires: R-mvtnorm
 BuildRequires : R-mvtnorm
-BuildRequires : clr-R-helpers
+BuildRequires : buildreq-R
 
 %description
 optionally with standard errors; tetrachoric and biserial correlations are special cases.
@@ -25,11 +25,11 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C
-export SOURCE_DATE_EPOCH=1521229051
+export SOURCE_DATE_EPOCH=1552794287
 
 %install
+export SOURCE_DATE_EPOCH=1552794287
 rm -rf %{buildroot}
-export SOURCE_DATE_EPOCH=1521229051
 export LANG=C
 export CFLAGS="$CFLAGS -O3 -flto -fno-semantic-interposition "
 export FCFLAGS="$CFLAGS -O3 -flto -fno-semantic-interposition "
@@ -64,8 +64,7 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export _R_CHECK_FORCE_SUGGESTS_=false
-R CMD check --no-manual --no-examples --no-codoc -l %{buildroot}/usr/lib64/R/library polycor|| : 
-cp ~/.stash/* %{buildroot}/usr/lib64/R/library/*/libs/ || :
+R CMD check --no-manual --no-examples --no-codoc  polycor || :
 
 
 %files
