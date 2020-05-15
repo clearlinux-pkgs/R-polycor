@@ -4,7 +4,7 @@
 #
 Name     : R-polycor
 Version  : 0.7.10
-Release  : 26
+Release  : 27
 URL      : https://cran.r-project.org/src/contrib/polycor_0.7-10.tar.gz
 Source0  : https://cran.r-project.org/src/contrib/polycor_0.7-10.tar.gz
 Summary  : Polychoric and Polyserial Correlations
@@ -13,28 +13,28 @@ License  : GPL-2.0+
 Requires: R-mvtnorm
 BuildRequires : R-mvtnorm
 BuildRequires : buildreq-R
-BuildRequires : util-linux
 
 %description
 optionally with standard errors; tetrachoric and biserial correlations are special cases.
 
 %prep
 %setup -q -c -n polycor
+cd %{_builddir}/polycor
 
 %build
 export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1571876652
+export SOURCE_DATE_EPOCH=1589537368
 
 %install
-export SOURCE_DATE_EPOCH=1571876652
+export SOURCE_DATE_EPOCH=1589537368
 rm -rf %{buildroot}
 export LANG=C.UTF-8
 export CFLAGS="$CFLAGS -O3 -flto -fno-semantic-interposition "
-export FCFLAGS="$CFLAGS -O3 -flto -fno-semantic-interposition "
-export FFLAGS="$CFLAGS -O3 -flto -fno-semantic-interposition "
+export FCFLAGS="$FFLAGS -O3 -flto -fno-semantic-interposition "
+export FFLAGS="$FFLAGS -O3 -flto -fno-semantic-interposition "
 export CXXFLAGS="$CXXFLAGS -O3 -flto -fno-semantic-interposition "
 export AR=gcc-ar
 export RANLIB=gcc-ranlib
