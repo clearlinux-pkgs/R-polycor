@@ -4,7 +4,7 @@
 #
 Name     : R-polycor
 Version  : 0.8.0
-Release  : 39
+Release  : 40
 URL      : https://cran.r-project.org/src/contrib/polycor_0.8-0.tar.gz
 Source0  : https://cran.r-project.org/src/contrib/polycor_0.8-0.tar.gz
 Summary  : Polychoric and Polyserial Correlations
